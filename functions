@@ -1,0 +1,22 @@
+function notif(title,text,duration)
+game.StarterGui:SetCore("SendNotification", {
+ Title = title;
+ Text = text;
+ Duration = duration;
+ })
+end
+
+function serverhop()
+ local HttpService, TPService = game:GetService("HttpService"), game:GetService("TeleportService")
+ function RandomServer()
+     temp = {}
+     local ServersToTP = HttpService:JSONDecode(game:HttpGet("https://games.roblox.com/v1/games/"..game.PlaceId.."/servers/Public?sortOrder=Asc&limit=100"))
+     for i,v in pairs(ServersToTP.data) do
+         if v.playing ~= v.maxPlayers then
+             table.insert(temp,v)
+         end
+     end
+     return temp[math.random(1,#temp)]
+ end
+ TPService:TeleportToPlaceInstance(game.PlaceId, RandomServer().id)
+end
