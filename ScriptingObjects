@@ -13,16 +13,8 @@ function TeleportTo(player)
 	Character.HumanoidRootPart.CFrame = Players[player].Character.HumanoidRootPart.CFrame
 end
 
-function Decapitate()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/Decapitate"))()
-end
-
-function DropBody()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/DropBody"))()
-end
-
 function NetBypass()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/NetBypass))()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/NetBypass"))()
 end
 
 function AntiFling()
@@ -32,5 +24,10 @@ end
 function SetClipboard(content)
 	local data = tostring(content)
 	setclipboard(data)
+end
+
+function execute(link) 
+	local string = tostring(link)
+	loadstring(game:HttpGet(link))()
 end
 
