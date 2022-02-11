@@ -1,0 +1,36 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/functions"))()
+local LocalPlayer = game:GetService("Players").LocalPlayer
+local Players = game:GetService("Players")
+local Character = LocalPlayer.Character
+local TeleportService = game:GetService("TeleportService")
+local VirtualUser = game:GetService("VirtualUser")
+
+function ResetLocalPlayer()
+	Character.Humanoid.Health = 0
+end
+
+function TeleportTo(player)
+	Character.HumanoidRootPart.CFrame = Players[player].Character.HumanoidRootPart.CFrame
+end
+
+function Decapitate()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/Decapitate"))()
+end
+
+function DropBody()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/DropBody"))()
+end
+
+function NetBypass()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/NetBypass))()
+end
+
+function AntiFling()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/NotMxth/Scripts/main/AntiFling"))()
+end
+
+function SetClipboard(content)
+	local data = tostring(content)
+	setclipboard(data)
+end
+
